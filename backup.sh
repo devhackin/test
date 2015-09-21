@@ -1,17 +1,15 @@
 #!/bin/bash
 
-echo BB;
 DATE="$(date +'%Y-%m-%d %H:%M:%S')"
 #rsync -avPz --delete --stats -l -t /home/hanlife/www/ /home/hanlife/www_backup/
 rsync -avPz --delete --stats -l -t /home/jsy/test/c1/ /home/jsy/test/c2/
 
-echo AA;
-#if [ $? -eq 0 ]
-#then
+if [ $? -eq 0 ]
+then
 	echo OK;
 	git add --all;
 	git commit -m "chore(auto): ${DATE} 자동커밋을 하다";
 	git push;
-#else
+else
 	echo FAIL;
-#fi
+fi
